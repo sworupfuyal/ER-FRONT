@@ -1,0 +1,116 @@
+/* Main container for the signup page */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Left section styles */
+.left-section {
+  flex: 1;
+  background: linear-gradient(to right, #2176ff, #21a0ff);
+  color: white;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+}
+
+.left-section h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.left-section p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.signin-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.signin-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Right section styles */
+.right-section {
+  flex: 1;
+  background-color: white;
+  padding: 50px;
+  text-align: center;
+  border-radius: 0 10px 10px 0;
+}
+
+.right-section h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-btn {
+  width: 100%;
+  background-color: #2176ff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background-color: #1a5fd3;
+}
+
+.social-text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons i {
+  font-size: 22px;
+  color: #2176ff;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #1a5fd3;
+}
+
+
+
+
+.user-type-dropdown {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem; /* Add some spacing below the dropdown */
+  width: 100%; /* Make the dropdown take full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+

@@ -1,0 +1,71 @@
+.seller-property-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    padding: 20px;
+    font-family: sans-serif; /* Use a suitable font */
+  }
+  
+  .form-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    width: 500px; /* Adjust form width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .name-inputs {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  textarea {
+    height: 100px; /* Adjust height as needed */
+  }
+  
+  .pets-policy, .amenities {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .radio-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .checkbox-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 10px;
+  }
+  
+  button {
+    background-color: #007bff; /* Example button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }

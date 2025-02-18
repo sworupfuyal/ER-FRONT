@@ -1,0 +1,131 @@
+/* Footer Contact Section */
+.footerContact {
+  background-color: #27ae60;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.footerContact h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.footerContact p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Main Footer Styling */
+footer {
+  background-color: #1d2636;
+  padding: 50px 20px;
+  color: #fff;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+footer .logo img {
+  width: 120px;
+}
+
+footer h2 {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+footer p {
+  color: #b0b0b0;
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer input {
+  background-color: #fff;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+footer button {
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+footer button:hover {
+  background-color: #219150;
+}
+
+footer h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  color: #b0b0b0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+footer ul li:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Legal Section */
+.legal {
+  text-align: center;
+  padding: 15px;
+  background: #1d2636;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  footer .container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footerContact h1 {
+    font-size: 26px;
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+
+  footer h3 {
+    font-size: 16px;
+  }
+
+  footer p, footer ul li {
+    font-size: 13px;
+  }
+}
