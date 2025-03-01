@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"; // Import Axios for API calls
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -8,39 +9,51 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [userType, setUserType] = useState("buyer");
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setSuccessMessage(null);
     setLoading(true);
 
+    // Validate passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       setLoading(false);
       return;
     }
 
-    // Simulate API call (replace with actual API call later)
-    setTimeout(() => {
-      if (Math.random() < 0.8) { // 80% success rate for demo
-        setSuccessMessage("Signup successful! Redirecting to login...");
-        setLoading(false);
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setTimeout(() => navigate("/login"), 2000);
-      } else {
-        setError("Signup failed. Please try again.");
-        setLoading(false);
-      }
-    }, 2000); // Simulate 2-second delay
+    // Prepare user data for API call
+    const userData = {
+      name: username,
+      email,
+      password,
+    };
+
+    try {
+      // Make API call to backend signup endpoint
+      const response = await axios.post("http://localhost:5000/api/signup", userData);
+
+      // Handle successful signup
+      setSuccessMessage("Signup successful! Redirecting to login...");
+      setLoading(false);
+
+      // Clear form fields
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+
+      // Redirect to login after 2 seconds
+      setTimeout(() => navigate("/login"), 2000);
+    } catch (err) {
+      // Handle errors from the API
+      setError(err.response?.data?.msg || "Signup failed. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -94,15 +107,6 @@ const Signup = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-
-          <select
-            value={userType}
-            onChange={(e) => setUserType(e.target.value)}
-            className="user-type-dropdown"
-          >
-            <option value="buyer">Buyer</option>
-            <option value="seller">Seller</option>
-          </select>
 
           <button type="submit" className="signup-btn" disabled={loading}>
             {loading ? "Signing Up..." : "Sign Up"}

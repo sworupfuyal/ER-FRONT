@@ -10,6 +10,7 @@ import Blog from "../blog/Blog";
 import Services from "../services/Services";
 import Contact from "../contact/Contact";
 import Sell from "../sellerpage/Sell";
+import Buy from "../buyerpage/buy";
 
 const Pages = () => {
   return (
@@ -20,6 +21,7 @@ const Pages = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sellerpage" element={<Sell />} />
+        <Route path="/buyerpage" element={<Buy />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
