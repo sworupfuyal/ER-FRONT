@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios
+
 import './Login.css';
 
 const Login = () => {
@@ -29,14 +30,8 @@ const Login = () => {
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
-      // Redirect based on user type
-      if (user.userType === 'seller') {
-        navigate('/sellerpage/sell');
-      } else if (user.userType === 'buyer') {
-        navigate('/buyerpage');
-      } else {
-        navigate('/'); // Default route
-      }
+      // Redirect to the home page
+      navigate('/home');
     } catch (err) {
       // Handle errors
       setError(err.response?.data?.error || 'Login failed. Please try again.');

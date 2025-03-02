@@ -69,3 +69,25 @@
     border-radius: 3px;
     cursor: pointer;
   }
+
+  .image-upload {
+    margin-bottom: 20px;
+  }
+  
+  .image-upload input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .preview-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }

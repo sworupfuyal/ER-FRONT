@@ -15,19 +15,83 @@ import Buy from "../buyerpage/buy";
 const Pages = () => {
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} exact /> {/* Add exact prop for root path */}
-        <Route path="/signup" element={<Signup />} />
+        {/* Landing page (no header/footer) */}
+        <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/sellerpage" element={<Sell />} />
-        <Route path="/buyerpage" element={<Buy />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
+
+        {/* Authenticated routes (with header/footer) */}
+        <Route
+          path="/home"
+          element={
+            <>
+              <Header />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/sellerpage"
+          element={
+            <>
+              <Header />
+              <Sell />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/buyerpage"
+          element={
+            <>
+              <Header />
+              <Buy />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Header />
+              <About />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <>
+              <Header />
+              <Services />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <>
+              <Header />
+              <Blog />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Header />
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
-      <Footer />
     </Router>
   );
 };
