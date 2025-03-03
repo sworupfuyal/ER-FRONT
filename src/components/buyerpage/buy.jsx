@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+// In your frontend code (Buy.jsx), update the axios request:
+
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Heading from "../common/Heading";
-import "./buy.css"; // Ensure correct CSS import
+import "./buy.css";
 
 const Buy = () => {
   const [properties, setProperties] = useState([]);
@@ -11,72 +12,59 @@ const Buy = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get("/api/properties/sell");
-
+        // Set the full URL to your backend instead of a relative path
+        const response = await axios.get("http://localhost:5000/api/properties/sell");
+        console.log("API Response Data:", response.data);
+  
         if (Array.isArray(response.data)) {
           setProperties(response.data);
         } else {
-          setProperties([]);
+          setError(`Unexpected response format: ${JSON.stringify(response.data)}`);
         }
       } catch (err) {
-        console.error("Error fetching properties:", err);
-        setError(err.response?.data?.error || "Failed to fetch properties.");
+        console.error("API Fetch Error:", err);
+        setError(err?.response?.data?.message || "Error fetching properties.");
       } finally {
         setLoading(false);
       }
     };
-
+  
     fetchProperties();
   }, []);
-
+  
   return (
-    <section className="recent padding">
-      <div className="container">
-        <Heading title="Properties for Sale" subtitle="Browse our latest property listings." />
-
-        {loading ? (
-          <p>Loading properties...</p>
-        ) : error ? (
-          <p className="error-message">{error}</p>
-        ) : properties.length > 0 ? (
-          <div className="content grid3 mtop">
-            {properties.map((property, index) => {
-              const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(property.price);
-              return (
-                <div className="box shadow" key={index}>
-                  <div className="img">
-                    <img
-                      src={property.images?.[0] || "default-placeholder.jpg"}
-                      alt={`${property.propertyType || "Property"} for sale`} // More descriptive alt text
-                    />
-                  </div>
-                  <div className="text">
-                    <div className="category flex">
-                      <span style={{ background: "#25b5791a", color: "#25b579" }}>For Sale</span>
-                      <i className="fa fa-heart"></i>
-                    </div>
-                    <h4>{property.propertyType}</h4>
-                    <p><i className="fa fa-location-dot"></i> {property.location}</p>
-                    <p><i className="fa fa-user"></i> {property.firstName} {property.lastName}</p>
-                    <p><i className="fa fa-envelope"></i> {property.email}</p>
-                    <p><i className="fa fa-phone"></i> {property.contactInfo}</p>
-                  </div>
-                  <div className="button flex">
-                    <div>
-                      <button className="btn2">{formattedPrice}</button>
-                      <label>/sqft</label>
-                    </div>
-                    <span>{property.propertyType}</span>
-                  </div>
-                </div>
-              );
-            })}
+    <div className="buy-container">
+      <h2 className="buy-title">Available Properties</h2>
+      {loading && <p className="loading">Fetching properties...</p>}
+      {error && <p className="error">{error}</p>}
+      {!loading && !error && properties.length === 0 && (
+        <p className="no-data">No properties found.</p>
+      )}
+      <div className="property-list">
+        {properties.map((property) => (
+          <div key={property.id} className="property-card">
+            <img
+              src={property.images?.[0] || "/images/placeholder.jpg"}
+              alt={`${property.location} Property`}
+              className="property-image"
+            />
+            <div className="property-details">
+              <h3>{property.location}</h3>
+              <p className="location">
+                <i className="fa fa-location-dot"></i> {property.location}
+              </p>
+              <p className="type">Type: {property.propertytype}</p>
+              <p className="price">Price: ${property.price}</p>
+              <p className="owner">Owner: {property.firstname} {property.lastname}</p>
+              <p className="contact">Contact: {property.email} | {property.contactinfo}</p>
+            </div>
+            <button className="favorite-button">
+              <i className="fa fa-heart"></i> Send Enquiry
+            </button>
           </div>
-        ) : (
-          <p>No properties available for sale.</p>
-        )}
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -19,14 +19,12 @@ const Signup = () => {
     setSuccessMessage(null);
     setLoading(true);
 
-    // Validate passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       setLoading(false);
       return;
     }
 
-    // Prepare user data for API call
     const userData = {
       name: username,
       email,

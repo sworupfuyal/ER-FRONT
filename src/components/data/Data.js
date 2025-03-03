@@ -1,4 +1,15 @@
 // src/components/data/Data.js
+
+import image from "../images/image.png";
+import villa from "../images/villa.png";
+import apartment from "../images/ap.png";
+import office from "../images/off.png";
+import condo from "../images/cong.png";
+import ros from "../images/ros.png";
+import raj from "../images/raj.png";
+import nik from "../images/nik.png";
+import nir from "../images/nir.png";
+
 export const nav = [
   { text: "home", path: "/" },
   { text: "about", path: "/about" },
@@ -9,13 +20,12 @@ export const nav = [
 ];
 
 export const featured = [
-  { cover: "/images/hero/h1.png", name: "Family House", total: "122 Property" }, // Corrected paths
-  { cover: "/images/hero/h2.png", name: "House & Villa", total: "155 Property" }, // Corrected paths
-  { cover: "/images/hero/h3.png", name: "Apartment", total: "300 Property" }, // Corrected paths
-  { cover: "/images/hero/h4.png", name: "Office & Studio", total: "80 Property" }, // Corrected paths
-  { cover: "/images/hero/h6.png", name: "Villa & Condo", total: "80 Property" }, // Corrected paths
+  { cover: image, name: "Family House", total: "122 Property" },
+  { cover: villa, name: "House & Villa", total: "155 Property" },
+  { cover: apartment, name: "Apartment", total: "300 Property" },
+  { cover: office, name: "Office & Studio", total: "80 Property" },
+  { cover: condo, name: "Villa & Condo", total: "80 Property" },
 ];
-
 export const list = [
   {
     id: 1,
@@ -132,49 +142,37 @@ export const location = [
 ];
 
 export const team = [
+  // Only including the entries for Ros, Raj, Nik, and Nir with .png extension
   {
-    list: "50",
-    cover: "/images/customer/team-1.jpg", // Corrected paths
-    address: "Liverpool, Canada",
-    name: "Sargam S. Singh",
-    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"], // Icon classes as strings
+    list: "45",
+    cover: ros,
+    address: "Toronto, Canada",
+    name: "Rosalina D. William",
+    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"],
   },
   {
-    list: "70",
-    cover: "/images/customer/team-2.jpg", // Corrected paths
-    address: "Montreal, Canada",
-    name: "Harijeet M. Siller",
-    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"], // Icon classes as strings
+    list: "60",
+    cover: raj,
+    address: "New York, USA",
+    name: "Raj K. Sharma",
+    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"],
   },
   {
-    list: "80",
-    cover: "/images/customer/team-3.jpg", // Corrected paths
-    address: "Denever, USA",
-    name: "Anna K. Young",
-    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"], // Icon classes as strings
+    list: "75",
+    cover: nik,
+    address: "Chicago, USA",
+    name: "Nikolas P. Watson",
+    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"],
   },
   {
-    list: "51",
-    cover: "/images/customer/team-4.jpg", // Corrected paths
-    address: "2272 Briarwood Drive",
-    name: "Michael P. Grimaldo",
-    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"], // Icon classes as strings
-  },
-  {
-    list: "42",
-    cover: "/images/customer/team-5.jpg", // Corrected paths
-    address: "2272 Briarwood Drive",
-    name: "Michael P. Grimaldo",
-    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"], // Icon classes as strings
-  },
-  {
-    list: "38",
-    cover: "/images/customer/team-5.jpg", // Corrected paths
-    address: "Montreal, USA",
-    name: "Adam K. Jollio",
-    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"], // Icon classes as strings
-  },
+    list: "55",
+    cover: nir,
+    address: "Vancouver, Canada",
+    name: "Niraj M. Patel",
+    icon: ["fa-brands fa-facebook-f", "fa-brands fa-linkedin", "fa-brands fa-twitter", "fa-brands fa-instagram"],
+  }
 ];
+
 
 export const price = [
   {

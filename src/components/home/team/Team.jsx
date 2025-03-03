@@ -1,68 +1,46 @@
 import React from "react";
 import "./team.css";
+import ros from "../../images/ros.png";
+import raj from "../../images/raj.png";
+import nik from "../../images/nik.png";
+import nir from "../../images/nir.png";
+
+
 
 // Team data embedded within the component
 const teamData = [
-  {
-    list: "50",
-    cover: "/images/customer/team-1.jpg",
-    address: "Liverpool, Canada",
-    name: "Sargam S. Singh",
-    icon: [
-      "fa-brands fa-facebook-f",
-      "fa-brands fa-linkedin",
-      "fa-brands fa-twitter",
-      "fa-brands fa-instagram",
-    ],
-  },
-  {
-    list: "70",
-    cover: "/images/customer/team-2.jpg",
-    address: "Montreal, Canada",
-    name: "Harijeet M. Siller",
-    icon: [
-      "fa-brands fa-facebook-f",
-      "fa-brands fa-linkedin",
-      "fa-brands fa-twitter",
-      "fa-brands fa-instagram",
-    ],
-  },
-  {
-    list: "80",
-    cover: "/images/customer/team-3.jpg",
-    address: "Denver, USA",
-    name: "Anna K. Young",
-    icon: [
-      "fa-brands fa-facebook-f",
-      "fa-brands fa-linkedin",
-      "fa-brands fa-twitter",
-      "fa-brands fa-instagram",
-    ],
-  },
-  {
-    list: "51",
-    cover: "/images/customer/team-4.jpg",
-    address: "2272 Briarwood Drive",
-    name: "Michael P. Grimaldo",
-    icon: [
-      "fa-brands fa-facebook-f",
-      "fa-brands fa-linkedin",
-      "fa-brands fa-twitter",
-      "fa-brands fa-instagram",
-    ],
-  },
-  {
-    list: "42",
-    cover: "/images/customer/team-5.jpg",
-    address: "New York, USA",
-    name: "Adam K. Jollio",
-    icon: [
-      "fa-brands fa-facebook-f",
-      "fa-brands fa-linkedin",
-      "fa-brands fa-twitter",
-      "fa-brands fa-instagram",
-    ],
-  },
+ {
+     list: "45",
+     cover: ros,
+     address: "Toronto, Canada",
+     name: "Rosalina D. William",
+     Contact:"9898989898",
+     icon:["9898989898"],
+   },
+   {
+     list: "60",
+     cover: raj,
+     address: "New York, USA",
+     name: "Raj K. Sharma",
+     Contact:"9898989898",
+     icon: ["9898989898"],
+   },
+   {
+     list: "75",
+     cover: nik,
+     address: "Chicago, USA",
+     name: "Nikolas P. Watson",
+     Contact:"9898989898",
+     icon: ["9898989898"],
+   },
+   {
+     list: "55",
+     cover: nir,
+     address: "Vancouver, Canada",
+     name: "Niraj M. Patel",
+     
+     icon: ["9898989898"],
+   }
 ];
 
 const Team = () => {
@@ -72,7 +50,7 @@ const Team = () => {
         <div className="heading">
           <h2>Our Featured Agents</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            Don't waste your time Directly contact thorough our offline Agents with high level expertise in this field.
           </p>
         </div>
 
@@ -101,7 +79,7 @@ const Team = () => {
 
                 <div className="button flex">
                   <button>
-                    <i className="fa fa-envelope"></i> Message
+                    <i className="fa fa-envelope"></i> Contact
                   </button>
                   <button className="btn4">
                     <i className="fa fa-phone-alt"></i>

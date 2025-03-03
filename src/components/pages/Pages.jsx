@@ -6,11 +6,11 @@ import Login from '../auth2/login';
 import Home from "../home/Home";
 import Footer from "../common/footer/Footer";
 import About from "../about/About";
-import Blog from "../blog/Blog";
 import Services from "../services/Services";
 import Contact from "../contact/Contact";
 import Sell from "../sellerpage/Sell";
 import Buy from "../buyerpage/buy";
+import Profile from "../profile/profile";
 
 const Pages = () => {
   return (
@@ -71,22 +71,24 @@ const Pages = () => {
             </>
           }
         />
-        <Route
-          path="/blog"
-          element={
-            <>
-              <Header />
-              <Blog />
-              <Footer />
-            </>
-          }
-        />
+       
         <Route
           path="/contact"
           element={
             <>
               <Header />
               <Contact />
+              <Footer />
+            </>
+          }
+        />
+        
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Header />
+              <Profile />
               <Footer />
             </>
           }

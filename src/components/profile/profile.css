@@ -1,0 +1,87 @@
+/* Profile.css */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .profile-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .item-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .item h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+  
+  .item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .item-actions {
+    margin-top: 10px;
+  }
+  
+  .item-actions button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .item-actions button:first-child {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .item-actions button:last-child {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .logout-section {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .logout-btn {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
